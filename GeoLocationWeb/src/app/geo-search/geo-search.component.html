@@ -1,0 +1,44 @@
+<div>
+    <div class="container">
+        <img class="map" src="assets/map_pin.svg">
+    </div>
+    <div class="container">
+        <form class="geo-form">
+            <div class="form-group">
+                    <mat-form-field class="geo-half">
+                        <input matInput placeholder="Center Longitude" [(ngModel)]="centerLongitude" name="centerLongitude" required>
+                      </mat-form-field>
+                      <mat-form-field class="geo-half">
+                        <input matInput placeholder="Center Latitude" [(ngModel)]="centerLatitude" name="centerLatitude" required>
+                      </mat-form-field>
+                  <mat-form-field class="geo-half">
+                    <input matInput placeholder="Border Longitude" [(ngModel)]="borderLongitude" name="borderLongitude" required>
+                  </mat-form-field>
+                  <mat-form-field class="geo-half">
+                    <input matInput placeholder="Border Latitude" [(ngModel)]="borderLatitude" name="borderLatitude" required>
+                  </mat-form-field>
+                  <div class="buttons_container">
+                      <div class="file-input-wrapper button_margin">
+                          <input hidden type="file" #fileInput (change)="onFileChange($event)">
+                          <button mat-raised-button color="primary" (click)="fileInput.click()">
+                            Browse
+                          </button>
+                          <span *ngIf="selectedFileName" class="file-name">
+                            {{ selectedFileName }}
+                          </span>
+                          <span *ngIf="!selectedFileName" class="file-name">
+                            No file selected
+                          </span>
+                        </div>
+                        <div class="button_margin">
+                            <button mat-raised-button (click)="onSubmit()">Search</button>
+                            <span style="margin-left: 10px;">
+                              Number of locations: {{countResult}}
+                            </span>
+                        </div>
+                    </div>
+                    <mat-progress-bar *ngIf="loadingSubject$ | async" class="progress" mode="indeterminate"></mat-progress-bar>
+            </div>
+          </form>
+    </div>
+</div>

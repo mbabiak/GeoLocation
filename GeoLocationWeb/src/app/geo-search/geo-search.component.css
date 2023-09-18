@@ -1,0 +1,49 @@
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-name {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+
+.geo-form {
+    min-width: 150px;
+    max-width: 600px;
+    width: 100%;
+  }
+
+.geo-half {
+    width: 50%;
+}
+
+html, body { 
+    height: 100%; 
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.progress {
+    margin-top: 10px;
+}
+
+.buttons_container {
+    display: flex;
+}
+
+.button_margin {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.map{
+    width: 10%;
+    place-items: center;
+    margin: 10px;
+}
